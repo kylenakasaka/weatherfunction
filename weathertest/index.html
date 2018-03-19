@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Title</title>
+	<meta content="Description" name="description">
+	<meta content="Author" name="author">
+	<link href="style/global.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+</head>
+<body>
+	<div class="wrapper">
+		<div class="location">
+            Boston, MA
+		</div>
+        <div id="date">
+
+		</div>
+         <div class="temperature"></div>
+		<div class="icon"></div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+		</script> 
+       
+		<script>
+		$(function() { 
+		      var url = "http://api.openweathermap.org/data/2.5/weather?q=Boston&units=imperial&APPID=0e66610b4b72d96c8e0d1208b12c078a"; 
+		      window['wxCallback'] = function(weatherData) {   
+		   var currentTemp = weatherData.main.temp;   
+		   var currentIcon = "<img src='http://openweathermap.org/img/w/" + weatherData.weather[0].icon + ".png'>";  
+		  $('.temperature').html(Math.round(currentTemp)); 
+        $('.icon').html(currentIcon);
+		      };
+
+
+		$.ajax({   url: url,   dataType: 'jsonp',   cache: true,   jsonpCallback: 'wxCallback'  }); }); 
+		</script>
+        <script>
+        var toda=new Date();
+        var y=toda.getFullYear();
+        var m=toda.getMonth();
+        var da=toda.getDate();
+        document.getElementById("date").innerHTML= m+1+" / "+da+" / "+y;
+        </script>
+	</div>
+</body>
+</html>

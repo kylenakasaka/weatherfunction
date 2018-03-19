@@ -1,0 +1,47 @@
+body{
+    padding: 0;
+    margin:0;
+}
+.wrapper {
+  margin-left: auto;
+            margin-right: auto;
+            min-width: 10em;
+            max-width: 20em;
+            background-color:black;
+            padding: 1em;
+    font-family: 'Quicksand', sans-serif;
+        }
+        
+        /* shades the sectioning elements, for demonstration purposes */
+        /* you could add colors, margins, and padding to each sectioning element instead */
+        .wrapper > * {
+            background-color:aqua;
+            padding: 1em;
+        }
+#date{
+    text-align: center;
+    font-size: 32pt;
+    padding-top: .25em;
+    padding-bottom: .25em;
+    margin-bottom: .25em;
+}
+.location {
+    text-align: center;
+    padding: .125em;
+    color: black;
+background-color: gray;
+    font-size:  36pt;
+margin-bottom: .25em;
+}
+ 
+.temperature,.icon{
+text-align: center;
+    color: black;
+    margin: 0;
+    font-size: 64pt;
+    padding: 0em;
+}
+.icon{
+width: 100%;
+    height: auto;
+}
